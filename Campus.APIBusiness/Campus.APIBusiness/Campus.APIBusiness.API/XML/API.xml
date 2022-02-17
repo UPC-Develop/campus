@@ -237,11 +237,10 @@
             <param name="app"></param>
             <param name="env"></param>
         </member>
-        <member name="M:Campus.APIBusiness.API.Controllers.Product_OrderController.List_History_Orders(System.Int32,System.Int32)">
+        <member name="M:Campus.APIBusiness.API.Controllers.CampusController.List_Campus(System.Int32)">
             <summary>
             
             </summary>
-            <param name="customer_id"></param>
             <param name="active"></param>
             <returns></returns>
         </member>

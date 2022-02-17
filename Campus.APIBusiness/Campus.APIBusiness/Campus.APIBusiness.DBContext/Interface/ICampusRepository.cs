@@ -7,6 +7,6 @@ namespace Campus.APIBusiness.DBContext.Interface
 {
     public interface ICampusRepository
     {
-        public BaseResponse List_Campus(Int32 campus_id, int active, Boolean description);
+        public BaseResponse List_Campus(Int32 active);
     }
 }

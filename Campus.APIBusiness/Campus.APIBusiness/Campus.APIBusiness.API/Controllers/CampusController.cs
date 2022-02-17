@@ -24,16 +24,16 @@ namespace Campus.APIBusiness.API.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="campus_id"></param>
+        
         /// <param name="active"></param>
         /// <returns></returns>
         [Produces("application/json")]
         [AllowAnonymous]
         [HttpGet]
-        [Route("list_campus")]
-        public ActionResult List_Campus(Int32 campus_id, int active)
+        [Route("list-campus")]
+        public ActionResult List_Campus(Int32 active)
         {
-            var ret = _CampusRepository.List_Campus(campus_id, active);
+            var ret = _CampusRepository.List_Campus(active);
             return Json(ret);
         }
 

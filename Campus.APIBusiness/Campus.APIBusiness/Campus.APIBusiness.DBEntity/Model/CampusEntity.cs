@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Campus.APIBusiness.DBEntity.Model
 {
-    public class List_CampusEntity
+    public class CampusEntity
     {
         public Int32 campus_id { get; set; }
-        public String status { get; set; }
-        public String campus_description { get; set; }
+        public Int32 active { get; set; }
+        public String description { get; set; }
         
     }
 }

@@ -69,7 +69,7 @@ namespace API
                   options.Audience = "API-APP-UPC";
               });
 
-            services.AddTransient<CampusRepository, Product_CampusRepository>();
+            services.AddTransient<ICampusRepository, CampusRepository>();
 
 
             services.AddSwaggerGen(c =>

@@ -13,10 +13,10 @@ namespace Campus.APIBusiness.DBContext.Repository
 {
     public class CampusRepository : BaseRepository, ICampusRepository
     {
-        public BaseResponse List_Campus(Int32 campus_id, int active)
+        public BaseResponse List_Campus(Int32 active)
         {
 
-            var list_CampusEntity = new List<List_CampusEntity>();
+            var campusEntity = new List<CampusEntity>();
             var returnEntity = new BaseResponse();
 
             try
@@ -27,18 +27,17 @@ namespace Campus.APIBusiness.DBContext.Repository
 
                     var p = new DynamicParameters();
 
-                    p.Add(name: "@campus_id", value: campus_id, dbType: DbType.Int32, direction: ParameterDirection.Input);
                     p.Add(name: "@active", value: active, dbType: DbType.Int16, direction: ParameterDirection.Input);
 
-                    list_CampusEntity = db.Query<List_CampusEntity>(sql: sql, param: p, commandType: CommandType.StoredProcedure).ToList();
+                    campusEntity = db.Query<CampusEntity>(sql: sql, param: p, commandType: CommandType.StoredProcedure).ToList();
 
         
-                    if (list_CampusEntity.Count > 0)
+                    if (campusEntity.Count > 0)
                     {
                         returnEntity.isSuccess = true;
                         returnEntity.errorCode = "0000";
                         returnEntity.errorMessage = string.Empty;
-                        returnEntity.data = list_CampusEntity;
+                        returnEntity.data = campusEntity;
                     }
                     else
                     {
