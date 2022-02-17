@@ -34,6 +34,7 @@ namespace Campus.APIBusiness.API.Controllers
         public ActionResult List_Campus(Int32 active)
         {
             var ret = _CampusRepository.List_Campus(active);
+
             return Json(ret);
         }
 

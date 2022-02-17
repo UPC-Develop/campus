@@ -9,6 +9,7 @@ using System.Data;
 using DBContext;
 using System.Linq;
 
+
 namespace Campus.APIBusiness.DBContext.Repository
 {
     public class CampusRepository : BaseRepository, ICampusRepository
@@ -35,27 +36,23 @@ namespace Campus.APIBusiness.DBContext.Repository
                     if (campusEntity.Count > 0)
                     {
                         returnEntity.isSuccess = true;
-                        returnEntity.errorCode = "0000";
+                        returnEntity.errorCode = string.Empty;
                         returnEntity.errorMessage = string.Empty;
                         returnEntity.data = campusEntity;
                     }
                     else
                     {
-                        returnEntity.isSuccess = true;
-                        returnEntity.errorCode = "0000";
-                        returnEntity.errorMessage = string.Empty;
-                        returnEntity.data = null;
+                        throw new CampusNotFoundException("No se encuentra sedes para el parametro");
                     }
                 }
             }
-            catch (Exception ex)
+            catch (CampusNotFoundException ex)
             {
                 returnEntity.isSuccess = false;
                 returnEntity.errorCode = "0001";
                 returnEntity.errorMessage = ex.Message;
                 returnEntity.data = null;
             }
-
             return returnEntity;
 
         }
