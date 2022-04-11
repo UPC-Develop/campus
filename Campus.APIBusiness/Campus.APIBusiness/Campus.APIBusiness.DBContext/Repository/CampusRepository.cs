@@ -24,7 +24,7 @@ namespace Campus.APIBusiness.DBContext.Repository
             {
                 using (var db = GetSqlConnection())
                 {
-                    const string sql = @"usp_List_Campus";
+                    const string sql = @"usp_list_campus";
 
                     var p = new DynamicParameters();
 
